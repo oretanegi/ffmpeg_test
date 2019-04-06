@@ -1,0 +1,229 @@
+    1  ll /var/
+    2  sudo yum update
+    3  sudo amazon-linux-extras install -y lamp-mariadb10.2-php7.3 php7.3
+    4  sudo amazon-linux-extras install -y lamp-mariadb10.2-php7.2 php7.2
+    5  php -v
+    6  sudo yum install -y httpd mariadb-server
+    7  sudo systemctl start httpd
+    8  sudo systemctl enable httpd
+    9  sudo systemctl is-enabled httpd
+   10  sudo usermod -a -G apache ec2-user
+   11  exit
+   12  sudo chown -R ec2-user:apache /var/www
+   13  sudo chmod 2775 /var/www && find /var/www -type d -exec sudo chmod 2775 {} \;
+   14  find /var/www -type f -exec sudo chmod 0664 {} \;
+   15  echo "<?php phpinfo(); ?>" > /var/www/html/phpinfo.php
+   16  sudo systemctl start mariadb
+   17  sudo mysql_secure_installation
+   18  mysql -u root -p
+   19  cd /var/www
+   20  ll
+   21  cd html/
+   22  ll
+   23  git clone https://github.com/oretanegi/ffmpeg_test.git
+   24  sudo yum install git
+   25  git clone https://github.com/oretanegi/ffmpeg_test.git
+   26  ll
+   27  cd ffmpeg_test/
+   28  ll
+   29  mkdir src
+   30  vi src/index.php
+   31  cd ../
+   32  ll
+   33  cd ffmpeg_test/
+   34  ll
+   35  cd mp4/
+   36  ll
+   37  sudo yum -y install epel-release
+   38  sudo rpm --import http://li.nux.ro/download/nux/RPM-GPG-KEY-nux.ro
+   39  sudo rpm -Uvh http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-1.el7.nux.noarch.rpm
+   40  ll
+   41  yum -y install ffmpeg ffmpeg-devel
+   42  sudo yum -y install ffmpeg ffmpeg-devel
+   43  sudo yum -y install ffmpeg ffmpeg-devel --skip-broken
+   44  which ffmpeg
+   45  sudo yum -y install nux-dextop
+   46  sudo yum -y --enablerepo=epel,nux-dextop install ffmpeg
+   47  history
+   48  sudo yum --enablerepo=nux-dextop ffmpeg ffmpeg-devel
+   49  sudo yum install --enablerepo=nux-dextop ffmpeg ffmpeg-devel
+   50  sudo yum install openal-soft
+   51  sudo yum install --enablerepo=epel openal-soft
+   52  history
+   53  sudo yum -y --enablerepo=epel openal-soft
+   54  sudo su -
+   55  history
+   56  sudo yum -y install ffmpeg ffmpeg-devel
+   57  sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+   58  sudo yum install -y epel-release
+   59  sudo yum-config-manager --enable epel
+   60  sudo yum repolist
+   61  sudo vim /etc/yum.repos.d/epel.repo
+   62  sudo yum -y install ffmpeg ffmpeg-devel
+   63  history
+   64  sudo yum -y --enablerepo=epel,nux-dextop install ffmpeg
+   65  sudo yum -y --enablerepo=epel,nux-dextop install ffmpeg --skip-broken
+   66  which ffmpeg
+   67  ll /usr/local
+   68  ll /usr/local/bin/
+   69  which vi
+   70  ll /usr/bin/
+   71  ll /usr/bin/| grep mpeg
+   72  sudo yum update
+   73  sudo yum -y --enablerepo=epel,nux-dextop install ffmpeg
+   74  sudo yum -y install ffmpeg
+   75  sudo yum -y install ffmpeg --skip-broken
+   76  sudo su -
+   77  sudo yum -y install ffmpeg
+   78  yum update
+   79  sudo yum update
+   80  sudo yum -y install ffmpeg
+   81  sudo yum -y --enablerepo=epel,nux-dextop install ffmpeg
+   82  sudo yum -y --enablerepo=epel,nux-dextop install ffmpeg --skip-broken
+   83  sudo su -
+   84  sudo yum update
+   85  yum groupinstall "Development Tools" "Development Libraries"
+   86  sudo yum groupinstall "Development Tools" "Development Libraries"
+   87  cd
+   88  ll
+   89  wget http://www.tortall.net/projects/yasm/releases/yasm-1.3.0.tar.gz
+   90  ll
+   91  tar xzvf yasm-1.3.0.tar.gz 
+   92  cd yasm-1.3.0/
+   93  ./configure
+   94  make
+   95  sudo make install
+   96  which yasm
+   97  git clone git://git.videolan.org/x264
+   98  ll
+   99  rm -rf x264/
+  100  cd ../
+  101  git clone git://git.videolan.org/x264
+  102  ll
+  103  cd x264/
+  104  ./configure
+  105  ./configure --enable-shared
+  106  ./configure --enable-shared --disable-asm
+  107  make
+  108  sudo make install
+  109  which x264
+  110  cd
+  111  wget http://sourceforge.net/projects/opencore-amr/files/fdk-aac/
+  112  l
+  113  ll
+  114  rm index.html 
+  115  wget https://sourceforge.net/settings/mirror_choices?projectname=opencore-amr&filename=fdk-aac/fdk-aac-2.0.0.tar.gz&selected=jaist
+  116  ll
+  117  wget https://downloads.sourceforge.net/project/opencore-amr/fdk-aac/fdk-aac-2.0.0.tar.gz?r=https%3A%2F%2Fsourceforge.net%2Fprojects%2Fopencore-amr%2Ffiles%2Flatest%2Fdownload&ts=1554518633
+  118  ll
+  119  wget https://downloads.sourceforge.net/project/opencore-amr/fdk-aac/fdk-aac-2.0.0.tar.gz?r=https%3A%2F%2Fsourceforge.net%2Fprojects%2Fopencore-amr%2Ffiles%2Ffdk-aac%2Ffdk-aac-2.0.0.tar.gz%2Fdownload%3Fuse_mirror%3Dautoselect&ts=1554518699&use_mirror=autoselect
+  120  ll
+  121  git clone git://source.ffmpeg.org/ffmpeg.git ffmpeg
+  122  cd ffmpeg/
+  123  ./configure --enable-gpl --enable-nonfree --enable-libx264
+  124  make
+  125  sudo make install
+  126  which ffmpeg
+  127  ffmpeg -h
+  128  ffmpeg -v
+  129  cd ../
+  130  git clone --depth 1 git://github.com/mstorsjo/fdk-aac.git
+  131  cd fdk-aac/
+  132  autoreconf -fiv
+  133  ./configure
+  134  make
+  135  sudo make install
+  136  cd
+  137  ll
+  138  cd ffmpeg/
+  139  git status
+  140  git branch -a
+  141  git checkout -b n4.1 origin/release/4.1
+  142  git branch
+  143  ./configure --enable-gpl --enable-nonfree --enable-libfdk_aac --enable-libx264 --enable-shared --arch=x86_64 --enable-pthreads
+  144  make
+  145  ll /usr/local/lib/pkgconfig/
+  146  export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig
+  147  make
+  148  export LD_LIBRARY_PATH=/usr/local/lib/
+  149  echo /usr/local/lib > /etc/ld.so.conf.d/custom-libs.conf
+  150  sudo echo /usr/local/lib > /etc/ld.so.conf.d/custom-libs.conf
+  151  ll /etc/ld.so.conf.d/
+  152  ls -ld /etc/ld.so.conf.d/
+  153  sudo touch /etc/ld.so.conf.d/custom-libs.conf
+  154  sudo echo /usr/local/lib > /etc/ld.so.conf.d/custom-libs.conf
+  155  sudo echo "/usr/local/lib" > /etc/ld.so.conf.d/custom-libs.conf
+  156  sudo vi /etc/ld.so.conf.d/custom-libs.conf
+  157  sudo ldconfig
+  158  ./configure 
+  159  make
+  160  ldd `which ffmpeg`
+  161  ls /usr/local/lib/libav*
+  162  history|grep configure
+  163  which yasm
+  164  cd
+  165  cd x264/
+  166  sudo make clean
+  167  ./configure --enable-shared --disable-asm
+  168  make
+  169  sudo make install
+  170  cd ../
+  171  cd fdk-aac/
+  172  cd ../
+  173  cd ffmpeg/
+  174  history|grep configure
+  175  ./configure --enable-gpl --enable-nonfree --enable-libx264 --enable-shared --arch=x86_64 --enable-pthreads
+  176  make
+  177  cd
+  178  cd ../
+  179  cd
+  180  ll
+  181  cd ffmpeg/
+  182  sudo make clean
+  183  cd ../
+  184  rm -rf ffmpeg/
+  185  git clone https://github.com/FFmpeg/FFmpeg.git
+  186  ll
+  187  history
+  188  ll
+  189  git clone https://github.com/FFmpeg/FFmpeg.git
+  190  ls -la
+  191  ll
+  192  rm fdk-aac-2.0.0.tar.gz\?r\=https\:%2F%2Fsourceforge.net%2Fprojects%2Fopencore-amr%2Ffiles%2F
+  193  ll
+  194  rm fdk*
+  195  rm -rf fdk*
+  196  ll
+  197  cd FFmpeg/
+  198  ./configure --help
+  199  ./configure
+  200  make
+  201  top
+  202  ps -ef|grep configure
+  203  make
+  204  ll
+  205  cd FFmpeg/
+  206  make
+  207  sudo make install
+  208  which ffmpeg
+  209  ffmpeg -h
+  210  cd /var/www/
+  211  ll
+  212  cd html/
+  213  ll
+  214  cd ffmpeg_test/
+  215  ll
+  216  cd mp4/
+  217  ll
+  218  ffmpeg -i sample.mp4 -ss 10 -t 5 -r 1 image%d.jpg
+  219  ll
+  220  vi ../src/index.php 
+  221  rm image*
+  222  ll
+  223  vi ../src/index.php 
+  224  history
+  225  vi ../src/index.php 
+  226  ll
+  227  cd ../
+  228  git status
+  229  history > history.txt
